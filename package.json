@@ -1,0 +1,22 @@
+{
+  "name": "coffee-cup",
+  "version": "0.0.1",
+  "description": "Coffee-cup, le vrai goût du café",
+  "scripts": {
+    "start": "app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bootstrap": "3.3.7",
+    "dateformat": "^2.0.0",
+    "express": "4.14.0",
+    "express-session": "^1.14.2",
+    "mysql": "^2.12.0",
+    "nodemailer": "^2.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "query-string": "^4.2.3",
+    "twig": "0.10.1",
+    "url": "^0.11.0"
+  }
+}
