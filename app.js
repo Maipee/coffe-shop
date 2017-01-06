@@ -46,7 +46,7 @@ app.use(function(req,res,next){
     if(typeof req == 'undefined'){
         console.log('Time : ',df(Date.now(),cfg.APP.dateformat),req.method,user,req.url);
         }
-    //@TODO commentaire next
+    //passe le contrôle à la prochaine route.
     next();
 });
 
