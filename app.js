@@ -11,14 +11,14 @@ var passport = require('passport');
 
 
 	/// MODULES Coffee-cup
-var cfg = require('config');//@TODO
-var auth = require('authentification');//@TODO
-var admin = require('admin');//@TODO
-var mailrouting = require('emailrouting');//@TODO
+var cfg = require('config');
+var auth = require('authentification');
+var admin = require('admin');
+var mailrouting = require('emailrouting');
 
 
 var df = require('dateformat');
-//@TODO classer use
+
 app.use(function(req,res,next){
     var user = 'anonymous'
     if(typeof req == 'undefined'){
@@ -33,6 +33,8 @@ app.use(function(req,res,next){
 /// START USE
 app.use(xpress.static('public/web'));
 app.use(xpress.static('public/web/admin'));//dossier web !
+app.use(xpress.static('public/admin'));// CSS, img, js pour l'admin
+
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
@@ -46,7 +48,7 @@ app.use(function(req,res,next){
     if(typeof req == 'undefined'){
         console.log('Time : ',df(Date.now(),cfg.APP.dateformat),req.method,user,req.url);
         }
-    //passe le contrôle à la prochaine route.
+    //@TODO commentaire next
     next();
 });
 
@@ -54,9 +56,11 @@ app.use("/",mailrouting);
 
 app.use("/",routing);
 
+app.use("/admin",admin);
+
 /// END USE
 
-/// 404 (LAST)
+/// 404 (LAST!!!)
 
 app.use(function(req,resp){
     // Si requête sans réponse

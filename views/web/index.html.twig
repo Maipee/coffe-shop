@@ -64,6 +64,17 @@
                     <li>
                         <a href="/contact.html">Contact</a>
                     </li>
+                                      
+                    {% if req.body.user is defined %}
+                    
+                        <li>
+                            <a href="/logout.html">Log out</a>
+                        </li>
+                        <li>               
+                   			<a href="/#">Welcome {{ username }} </a>                      
+                    	</li>
+                    {% endif %}
+                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
