@@ -30,29 +30,31 @@
 					</p>
                     <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
                       <thead>
-                        <tr>						
+                        <tr>					
                           <th>ID</th>
                           <th>Name</th>
                           <th>Email</th>
                           <th>Subject</th>
-                          <th>Email Notification</th>
-                          <th>Création date</th>
-                          <th><i class="fa fa-cog"></i>Traitement</th>
+                          <th width="10%" align="center"> Email Notification <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mail de retour envoyé si 1"></i></th>
+                          <th width="10%">Création date</th>
+                          <th width="5%" align="center">Resolved</th>
+                          <th width="5%" align="center">Traitement <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cliquez après avoir traité la demande"></i></th>
                         </tr> 
                       </thead>
-					  {%  if form_email is defined %}
+					  {% if form_email is defined %}
                       <tbody>
                           {% for rows in form_email %}
                         <tr>
                           <td>{{ rows.id }}</td>
-                          <td>{{ rows.name }}</td>
-                          <td>{{ rows.email }}</td>
+                          <td>{{ rows.name }}</td>                         
+                          <td><strong><a href="mailto:{{ rows.email }}">{{ rows.email }}</a></strong></td>
                           <td>{{ rows.subject }}</td>
-                          <td>{{ rows.emailnotification }}</td>
-                          <td>{{ rows.creationdate|date("d/m/Y H:i:s") }}</td>                         
-                          <td>
-                              {% if rows.emailnotification == 0 %}
-                              <a  class="btn btn-info btn-xs" href="modifmessage/{{ rows.id }}/{{ rows.email }}">Traiter</a>
+                          <td align="center">{{ rows.emailnotification }}</td>
+                          <td>{{ rows.creationdate|date("d/m/Y H:i:s") }}</td>
+                          <td align="center">{{ rows.resolved }}</td>                          
+                          <td align="center">
+                              {% if rows.resolved == 0 %}
+                              <a  class="btn btn-info btn-xs" href="resolvemessage/{{ rows.id }}/{{ rows.email }}">Demande traitée</a>
                               {% endif %}                                              
                           </td>
                            {% endfor %}
