@@ -24,7 +24,7 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                  <div class="x_content" style="width=0">
                  <p class="text-muted font-13 m-b-30">
 					Curabitur et libero tempor lorem interdum ullamcorper vitae ut ante. Nam at sagittis augue. Phasellus congue felis quam, ac venenatis magna venenatis tincidunt.
 					</p>
@@ -35,10 +35,10 @@
                           <th>Name</th>
                           <th>Email <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cliquez pour envoyer un mail"></i></th>
                           <th>Subject</th>
-                          <th width="10%" align="center"> Email Notification <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mail de retour envoyé si 1"></i></th>
-                          <th width="10%">Création date</th>
-                          <th width="5%" align="center">Resolved</th>
-                          <th width="5%" align="center">Traitement <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cliquez après avoir traité la demande"></i></th>
+                          <th align="center"> Email Notification <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mail de retour envoyé si 1"></i></th>
+                          <th>Création date</th>
+                          <th align="center">Resolved</th>
+                          <th align="center">Traitement <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cliquez après avoir traité la demande"></i></th>
                         </tr> 
                       </thead>
 					  {% if form_email is defined %}
@@ -65,7 +65,7 @@
                 </div>
               </div>
         </div>
-        
+        </div>
         <!-- /page content -->
 {% endblock %}	
 {% block css %}
