@@ -52,7 +52,7 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use("/",mailrouting);
+app.use("/",mailrouting); 
 
 app.use("/",routing);
 

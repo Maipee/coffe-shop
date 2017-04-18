@@ -115,24 +115,42 @@
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Name *</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" placeholder="Votre nom">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Email Address *</label>
-                                <input type="text" class="form-control" name="email">
+                                <input type="text" placeholder="mail@website.com" class="form-control" name="email">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Phone Number</label>
                                 <input type="phone" class="form-control" name="phone" maxlength="10">
                             </div>
                             <div class="clearfix"></div>
-                            <div class="form-group col-lg-12">
+                            <div class="form-group col-lg-12"> 
                                 <label>Message *</label>
-                                <textarea class="form-control" rows="6" name="subject"></textarea>
+                                <textarea class="form-control" placeholder="Votre message" rows="6" name="subject"
+                                {# J'interdis la frappe des caractères spéciaux ref:http://java.scripts-fr.com/scripts.php?js=33  #}
+                               {# onKeypress="
+                                    	if (event.keyCode==60 || event.keyCode==62) event.returnValue = false;
+                                     	if (event.which==60 || event.which==62) return false;"#}
+                                ></textarea>
                             </div>
                             <div class="form-group col-lg-12">
                                 <input type="hidden" name="save" value="contact">
                                 <button id="submit" type="submit" class="btn btn-default">Submit</button>
+                                {% if message %} 
+                                
+                                
+                                                                                                                                 
+    								<div>
+                                       {{ message }}                              
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                {% endif %}
                             </div>
                         </div>
                     </form>
@@ -158,7 +176,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
-
+	
+	
 </body>
 
 </html>
